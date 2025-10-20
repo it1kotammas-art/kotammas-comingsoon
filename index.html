@@ -16,21 +16,27 @@
         font-family: "Poppins", sans-serif;
       }
 
-      body {
+      html, body {
+        height: 100%;
+        overflow: hidden; /* Hilangkan scroll sepenuhnya */
         background: #fff;
         color: #fff;
-        overflow-x: hidden;
       }
 
       /* NAVBAR */
       header {
+        position: fixed; /* Biar nempel di atas */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
         background: #0b1d3a;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 40px; /* Tambah padding atas-bawah supaya agak turun */
+        padding: 16px 40px;
         flex-wrap: wrap;
-        height: 85px; /* Naikkan sedikit tinggi header */
+        height: 85px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       }
 
@@ -63,13 +69,14 @@
         background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
           url("bg.jpg") no-repeat center center/cover;
         background-attachment: fixed;
-        height: calc(100vh - 85px); /* Sesuaikan tinggi dengan navbar baru */
+        height: 100vh; /* isi penuh layar */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         gap: 15px;
+        padding-top: 85px; /* biar konten gak ketimpa navbar */
       }
 
       .hero h2 {
@@ -132,7 +139,7 @@
         }
 
         .hero {
-          height: calc(100vh - 75px);
+          padding-top: 75px;
         }
 
         .hero h1 {
