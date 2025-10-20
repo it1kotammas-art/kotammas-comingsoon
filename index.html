@@ -19,7 +19,7 @@
       body {
         background: #fff;
         color: #fff;
-        overflow-x: hidden;
+        overflow: hidden; /* Hilangkan scroll vertikal */
       }
 
       /* NAVBAR */
@@ -34,16 +34,8 @@
 
       header img {
         height: 60px;
-        filter: drop-shadow(
-          0 0 12px rgba(255, 255, 255, 0.7)
-        ); /* Efek cahaya putih */
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
         transition: 0.3s;
-      }
-
-      header img:hover {
-        filter: drop-shadow(
-          0 0 20px rgba(255, 255, 255, 1)
-        ); /* Tambah glow saat hover */
       }
 
       nav {
@@ -58,141 +50,117 @@
         text-decoration: none;
         font-weight: 500;
         transition: 0.3s;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Efek cahaya putih */
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
       }
 
       header nav a:hover {
         color: #ffcc33;
-        text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
       }
 
-      /* HERO SECTION */
+      /* HERO */
       .hero {
         background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
           url("bg.jpg") no-repeat center center/cover;
-        height: 100vh;
+        height: calc(100vh - 80px);
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end; /* isi diturunkan ke bawah */
         align-items: center;
         text-align: center;
-        padding: 0 20px;
+        gap: 15px;
+        padding-bottom: 90px; /* jarak agar footer bisa naik pas */
       }
 
       .hero h2 {
-        font-size: 28px;
-        font-weight: 700;
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
         color: #fff;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-        text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); /* Cahaya lembut */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
       }
 
       .hero h1 {
-        font-size: 72px;
+        font-size: 70px;
         font-weight: 800;
         text-transform: uppercase;
         color: #fff;
-        margin-bottom: 25px;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
-          0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5); /* Efek glow ambient putih */
+        margin-bottom: 10px;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
+          0 0 35px rgba(255, 255, 255, 0.6);
       }
 
       .countdown-box {
         background: rgba(10, 28, 61, 0.7);
-        padding: 20px 40px;
-        border-radius: 16px;
-        font-size: 26px;
+        padding: 12px 30px;
+        border-radius: 14px;
+        font-size: 22px;
         font-weight: 600;
         color: #ffcc33;
-        margin-bottom: 35px;
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
       }
 
-      /* ICON SOSMED */
       .social-icons {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
         gap: 18px;
+        margin-top: 8px;
       }
 
       .social-icons a {
         color: #fff;
-        font-size: 28px;
+        font-size: 26px;
         transition: 0.3s;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
       }
 
       .social-icons a:hover {
         color: #ffcc33;
         transform: scale(1.2);
-        text-shadow: 0 0 15px rgba(255, 255, 255, 1);
       }
 
+      /* FOOTER di dalam hero agar pas layar */
       footer {
-        background: #fff;
-        color: #333;
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
         text-align: center;
-        padding: 15px;
         font-size: 15px;
         font-weight: 500;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
       }
 
-      /* === RESPONSIVE === */
-      @media (max-width: 900px) {
-        header {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        header img {
-          height: 55px;
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .hero {
+          padding-bottom: 80px;
         }
 
         .hero h1 {
-          font-size: 54px;
-        }
-
-        .countdown-box {
-          font-size: 22px;
-          padding: 15px 30px;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .hero {
-          height: 90vh;
-          padding: 0 15px;
+          font-size: 48px;
         }
 
         .hero h2 {
-          font-size: 22px;
-        }
-
-        .hero h1 {
-          font-size: 40px;
+          font-size: 20px;
         }
 
         .countdown-box {
           font-size: 18px;
-          padding: 10px 20px;
-          margin-bottom: 25px;
+          padding: 10px 25px;
         }
 
         .social-icons a {
-          font-size: 24px;
+          font-size: 22px;
         }
 
         footer {
-          font-size: 15px;
+          font-size: 13px;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <img src="logokotammas.jpg" alt="logokotammas" />
+      <img src="logokotammas.jpg" alt="Logo KOTAMMAS" />
       <nav>
         <a href="#">Beranda</a>
         <a href="#">Layanan</a>
@@ -215,14 +183,14 @@
         <a href="#"><i class="fab fa-whatsapp"></i></a>
         <a href="#"><i class="fas fa-map-marker-alt"></i></a>
       </div>
-    </section>
 
-    <footer>© 2025 KOTAMMAS.</footer>
+      <footer>© 2025 KOTAMMAS.</footer>
+    </section>
 
     <script>
       const countdown = document.getElementById("countdown");
       const targetDate = new Date();
-      targetDate.setDate(targetDate.getDate() + 14); // 2 minggu dari sekarang
+      targetDate.setDate(targetDate.getDate() + 14);
 
       function updateCountdown() {
         const now = new Date();
