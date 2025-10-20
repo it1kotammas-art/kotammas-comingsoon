@@ -13,124 +13,155 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
       }
 
       body {
-        font-family: "Poppins", sans-serif;
-        background: url('bg.jpg') no-repeat center center/cover;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        color: white;
+        background: #fff;
+        color: #fff;
+        overflow-x: hidden;
       }
 
+      /* NAVBAR */
       header {
-        background: rgba(0, 0, 50, 0.8);
+        background: #0b1d3a;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 8px 20px;
+        justify-content: space-between;
+        padding: 16px 40px; /* Tambah padding atas-bawah supaya agak turun */
+        flex-wrap: wrap;
+        height: 85px; /* Naikkan sedikit tinggi header */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       }
 
       header img {
-        height: 45px;
+        height: 58px;
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
       }
 
       nav {
         display: flex;
-        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 22px;
       }
 
-      nav a {
-        color: white;
+      header nav a {
+        color: #fff;
         text-decoration: none;
-        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
       }
 
-      .content {
-        flex: 1;
+      header nav a:hover {
+        color: #ffcc33;
+      }
+
+      /* HERO */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
+          url("bg.jpg") no-repeat center center/cover;
+        background-attachment: fixed;
+        height: calc(100vh - 85px); /* Sesuaikan tinggi dengan navbar baru */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 0 15px;
+        gap: 15px;
       }
 
-      .content h1 {
-        font-size: 40px;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-
-      .content h2 {
-        font-size: 18px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        margin-bottom: 20px;
-      }
-
-      .countdown {
-        background: rgba(0, 0, 70, 0.8);
-        padding: 8px 18px;
-        border-radius: 10px;
+      .hero h2 {
+        font-size: 28px;
         font-weight: 600;
-        color: #ffd700;
-        margin-bottom: 15px;
+        letter-spacing: 1.5px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
       }
 
-      .socials {
+      .hero h1 {
+        font-size: 72px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
+          0 0 35px rgba(255, 255, 255, 0.6);
+      }
+
+      .countdown-box {
+        background: rgba(10, 28, 61, 0.75);
+        padding: 14px 36px;
+        border-radius: 14px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #ffcc33;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+      }
+
+      .social-icons {
         display: flex;
         justify-content: center;
         gap: 18px;
-        margin-top: 10px;
+        margin-top: 14px;
       }
 
-      .socials a {
-        color: white;
-        font-size: 22px;
+      .social-icons a {
+        color: #fff;
+        font-size: 26px;
         transition: 0.3s;
       }
 
-      .socials a:hover {
-        color: #ffd700;
+      .social-icons a:hover {
+        color: #ffcc33;
+        transform: scale(1.2);
       }
 
       footer {
-        font-size: 12px;
-        text-align: center;
-        padding-bottom: 5px;
-        color: #ccc;
+        margin-top: 8px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
       }
 
+      /* RESPONSIVE */
       @media (max-width: 768px) {
         header {
-          flex-direction: column;
-          gap: 5px;
+          padding: 12px 20px;
+          height: 75px;
         }
-        nav {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .content h1 {
-          font-size: 32px;
-        }
-      }
 
-      @media (max-height: 700px) {
-        .content h1 {
-          font-size: 28px;
+        .hero {
+          height: calc(100vh - 75px);
         }
-        .countdown {
-          padding: 5px 12px;
+
+        .hero h1 {
+          font-size: 50px;
+        }
+
+        .hero h2 {
+          font-size: 22px;
+        }
+
+        .countdown-box {
+          font-size: 18px;
+          padding: 10px 25px;
+        }
+
+        .social-icons a {
+          font-size: 22px;
+        }
+
+        footer {
+          font-size: 13px;
         }
       }
     </style>
   </head>
+
   <body>
     <header>
-      <img src="logo.png" alt="Logo KOTAMMAS" />
+      <img src="logokotammas.jpg" alt="Logo KOTAMMAS" />
       <nav>
         <a href="#">Beranda</a>
         <a href="#">Layanan</a>
@@ -139,19 +170,44 @@
       </nav>
     </header>
 
-    <div class="content">
+    <section class="hero">
       <h2>COMING SOON</h2>
       <h1>KOTAMMAS</h1>
-      <div class="countdown">13 Hari 23 Jam 59 Menit 13 Detik</div>
-      <footer>© 2025 KOTAMMAS.</footer>
-      <div class="socials">
-        <a href="#"><i class="fab fa-facebook"></i></a>
+      <div class="countdown-box" id="countdown"></div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fa fa-location-dot"></i></a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i></a>
       </div>
-    </div>
+
+      <footer>© 2025 KOTAMMAS.</footer>
+    </section>
+
+    <script>
+      const countdown = document.getElementById("countdown");
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 14);
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+        if (diff <= 0) {
+          countdown.innerHTML = "Acara Sudah Dimulai!";
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / 1000 / 60) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
   </body>
 </html>
