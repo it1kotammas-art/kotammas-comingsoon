@@ -16,78 +16,71 @@
         font-family: "Poppins", sans-serif;
       }
 
-      html, body {
-        height: 100%;
-        overflow: hidden; /* Hilangkan scroll sepenuhnya */
+      body {
         background: #fff;
         color: #fff;
+        overflow-x: hidden;
       }
 
-      /* NAVBAR */
+      /* ===== NAVBAR ===== */
       header {
-        position: fixed; /* Biar nempel di atas */
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
         background: #0b1d3a;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 40px;
-        flex-wrap: wrap;
-        height: 85px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        padding: 10px 40px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       }
 
       header img {
-        height: 58px;
-        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+        height: 50px;
+        width: auto;
       }
 
       nav {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 22px;
+        gap: 28px;
       }
 
-      header nav a {
+      nav a {
         color: #fff;
         text-decoration: none;
         font-weight: 500;
         transition: 0.3s;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
       }
 
-      header nav a:hover {
+      nav a:hover {
         color: #ffcc33;
       }
 
-      /* HERO */
+      /* ===== HERO ===== */
       .hero {
         background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
           url("bg.jpg") no-repeat center center/cover;
-        background-attachment: fixed;
-        height: 100vh; /* isi penuh layar */
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        gap: 15px;
-        padding-top: 85px; /* biar konten gak ketimpa navbar */
+        padding-top: 70px; /* biar ga ketutup navbar */
       }
 
       .hero h2 {
-        font-size: 28px;
+        font-size: 26px;
         font-weight: 600;
         letter-spacing: 1.5px;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
       }
 
       .hero h1 {
-        font-size: 72px;
+        font-size: 70px;
         font-weight: 800;
         text-transform: uppercase;
         margin-bottom: 10px;
@@ -96,8 +89,8 @@
       }
 
       .countdown-box {
-        background: rgba(10, 28, 61, 0.75);
-        padding: 14px 36px;
+        background: rgba(10, 28, 61, 0.7);
+        padding: 12px 30px;
         border-radius: 14px;
         font-size: 22px;
         font-weight: 600;
@@ -131,32 +124,40 @@
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
       }
 
-      /* RESPONSIVE */
+      /* ===== RESPONSIVE ===== */
       @media (max-width: 768px) {
         header {
-          padding: 12px 20px;
-          height: 75px;
+          padding: 8px 20px;
+          height: 64px;
+        }
+
+        nav {
+          gap: 18px;
+        }
+
+        nav a {
+          font-size: 14px;
+        }
+
+        header img {
+          height: 42px;
         }
 
         .hero {
-          padding-top: 75px;
+          padding-top: 64px;
         }
 
         .hero h1 {
-          font-size: 50px;
+          font-size: 48px;
         }
 
         .hero h2 {
-          font-size: 22px;
+          font-size: 20px;
         }
 
         .countdown-box {
           font-size: 18px;
           padding: 10px 25px;
-        }
-
-        .social-icons a {
-          font-size: 22px;
         }
 
         footer {
