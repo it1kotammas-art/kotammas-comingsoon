@@ -13,154 +13,124 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
       }
 
       body {
-        background: #fff;
-        color: #fff;
-        overflow: hidden; /* Hilangkan scroll vertikal */
+        font-family: "Poppins", sans-serif;
+        background: url('bg.jpg') no-repeat center center/cover;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        color: white;
       }
 
-      /* NAVBAR */
       header {
-        background: #0b1d3a;
+        background: rgba(0, 0, 50, 0.8);
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        padding: 10px 40px;
-        flex-wrap: wrap;
+        align-items: center;
+        padding: 8px 20px;
       }
 
       header img {
-        height: 60px;
-        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
-        transition: 0.3s;
+        height: 45px;
       }
 
       nav {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 20px;
       }
 
-      header nav a {
-        color: #fff;
+      nav a {
+        color: white;
         text-decoration: none;
-        font-weight: 500;
-        transition: 0.3s;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        font-size: 16px;
       }
 
-      header nav a:hover {
-        color: #ffcc33;
-      }
-
-      /* HERO */
-      .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-          url("bg.jpg") no-repeat center center/cover;
-        height: calc(100vh - 80px);
+      .content {
+        flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end; /* isi diturunkan ke bawah */
+        justify-content: center;
         align-items: center;
         text-align: center;
-        gap: 15px;
-        padding-bottom: 90px; /* jarak agar footer bisa naik pas */
+        padding: 0 15px;
       }
 
-      .hero h2 {
-        font-size: 26px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        color: #fff;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-      }
-
-      .hero h1 {
-        font-size: 70px;
-        font-weight: 800;
-        text-transform: uppercase;
-        color: #fff;
+      .content h1 {
+        font-size: 40px;
+        font-weight: 700;
         margin-bottom: 10px;
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
-          0 0 35px rgba(255, 255, 255, 0.6);
       }
 
-      .countdown-box {
-        background: rgba(10, 28, 61, 0.7);
-        padding: 12px 30px;
-        border-radius: 14px;
-        font-size: 22px;
+      .content h2 {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+
+      .countdown {
+        background: rgba(0, 0, 70, 0.8);
+        padding: 8px 18px;
+        border-radius: 10px;
         font-weight: 600;
-        color: #ffcc33;
-        box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+        color: #ffd700;
+        margin-bottom: 15px;
       }
 
-      .social-icons {
+      .socials {
         display: flex;
         justify-content: center;
         gap: 18px;
-        margin-top: 8px;
+        margin-top: 10px;
       }
 
-      .social-icons a {
-        color: #fff;
-        font-size: 26px;
+      .socials a {
+        color: white;
+        font-size: 22px;
         transition: 0.3s;
       }
 
-      .social-icons a:hover {
-        color: #ffcc33;
-        transform: scale(1.2);
+      .socials a:hover {
+        color: #ffd700;
       }
 
-      /* FOOTER di dalam hero agar pas layar */
       footer {
-        position: absolute;
-        bottom: 15px;
-        width: 100%;
+        font-size: 12px;
         text-align: center;
-        font-size: 15px;
-        font-weight: 500;
-        color: #fff;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        padding-bottom: 5px;
+        color: #ccc;
       }
 
-      /* RESPONSIVE */
       @media (max-width: 768px) {
-        .hero {
-          padding-bottom: 80px;
+        header {
+          flex-direction: column;
+          gap: 5px;
         }
-
-        .hero h1 {
-          font-size: 48px;
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
         }
-
-        .hero h2 {
-          font-size: 20px;
+        .content h1 {
+          font-size: 32px;
         }
+      }
 
-        .countdown-box {
-          font-size: 18px;
-          padding: 10px 25px;
+      @media (max-height: 700px) {
+        .content h1 {
+          font-size: 28px;
         }
-
-        .social-icons a {
-          font-size: 22px;
-        }
-
-        footer {
-          font-size: 13px;
+        .countdown {
+          padding: 5px 12px;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <img src="logokotammas.jpg" alt="Logo KOTAMMAS" />
+      <img src="logo.png" alt="Logo KOTAMMAS" />
       <nav>
         <a href="#">Beranda</a>
         <a href="#">Layanan</a>
@@ -169,46 +139,19 @@
       </nav>
     </header>
 
-    <section class="hero">
+    <div class="content">
       <h2>COMING SOON</h2>
       <h1>KOTAMMAS</h1>
-
-      <div class="countdown-box" id="countdown"></div>
-
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <div class="countdown">13 Hari 23 Jam 59 Menit 13 Detik</div>
+      <footer>© 2025 KOTAMMAS.</footer>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+        <a href="#"><i class="fa fa-location-dot"></i></a>
       </div>
-
-      <footer>© 2025 KOTAMMAS.</footer>
-    </section>
-
-    <script>
-      const countdown = document.getElementById("countdown");
-      const targetDate = new Date();
-      targetDate.setDate(targetDate.getDate() + 14);
-
-      function updateCountdown() {
-        const now = new Date();
-        const diff = targetDate - now;
-        if (diff <= 0) {
-          countdown.innerHTML = "Acara Sudah Dimulai!";
-          return;
-        }
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / 1000 / 60) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-      }
-
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
-    </script>
+    </div>
   </body>
 </html>
